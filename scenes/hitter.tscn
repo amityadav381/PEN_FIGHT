@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5elwmx7aivla"]
+
+[ext_resource type="Texture2D" uid="uid://dgevhx62hejnm" path="res://assets/hitter/hitter.png" id="1_igrmw"]
+
+[node name="hitter" type="Node2D"]
+position = Vector2(556, 300)
+
+[node name="hitter_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_igrmw")

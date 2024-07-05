@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjysiaato4jv6"]
+
+[ext_resource type="PackedScene" uid="uid://c5elwmx7aivla" path="res://scenes/hitter.tscn" id="1_ny46v"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_tdsia"]
+[ext_resource type="Script" path="res://scenes/hitter.gd" id="3_xxij8"]
+[ext_resource type="PackedScene" uid="uid://bmp8ic78avyuw" path="res://scenes/pen_fighter.tscn" id="5_ebp7o"]
+[ext_resource type="Texture2D" uid="uid://cdd5cfuwfw025" path="res://assets/background/battle_table.png" id="5_q18ty"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tdsia")
+
+[node name="hitter" parent="." instance=ExtResource("1_ny46v")]
+z_index = 3
+position = Vector2(596, 328)
+script = ExtResource("3_xxij8")
+
+[node name="Table" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.6)
+texture = ExtResource("5_q18ty")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="pen_fighter" parent="." instance=ExtResource("5_ebp7o")]
+
+[node name="pen_fighter2" parent="." instance=ExtResource("5_ebp7o")]
+
+[connection signal="hit__" from="hitter" to="." method="_on_hitter_hit__"]
